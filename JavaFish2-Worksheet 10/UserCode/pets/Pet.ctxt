@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=model\ tex\ scale
+comment0.target=Pet(java.lang.String,\ java.lang.String,\ double)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pet\r\n
+comment1.params=
+comment1.target=void\ movement()
+comment2.params=dx\ dy\ dz
+comment2.target=void\ translate(double,\ double,\ double)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ dx\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\r\n
+comment3.params=dx\ dy
+comment3.target=void\ translate(double,\ double)
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ dx\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\r\n
+comment4.params=dx\ dy\ dz
+comment4.target=void\ rotate(double,\ double,\ double)
+comment4.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ dx\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\r\n
+comment5.params=dx\ dy
+comment5.target=void\ rotate(double,\ double)
+comment5.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ dx\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\r\n
+comment6.params=
+comment6.target=double\ random()
+comment6.text=\r\n\ METHOD\:\ Return\ a\ random\ number\ between\ two\ doubles,\ used\ to\ randomize\ fish\ speed\ on\ startup.\r\n\r\n\ @return\ \ \ \ \ a\ random\ number\ between\ the\ variables\ doubles\ "low"\ and\ "high"\r\n
+numComments=7
