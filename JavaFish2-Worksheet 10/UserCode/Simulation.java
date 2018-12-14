@@ -77,7 +77,7 @@ public class Simulation
         _displayObjects.add(new OrangeFish());
         // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
         _displayObjects.add(new Piranha());
-        _displayObjects.add(new Bubbler());
+        _displayObjects.add(new Bubbler(_core));
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
