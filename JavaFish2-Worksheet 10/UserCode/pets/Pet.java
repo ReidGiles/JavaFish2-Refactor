@@ -59,7 +59,7 @@ public abstract class Pet extends DisplayObject implements IPet
     {
         this.x += dx;
         this.y += dy;
-        this.z += dz;
+        this.z = dz;
     }
     
     /**
@@ -95,6 +95,25 @@ public abstract class Pet extends DisplayObject implements IPet
     protected void rotate(double dx, double dy)
     {
         rotate(dx,dy,0);
+    }
+    
+    protected boolean xBounce()
+    {
+        if (this.x <= 1 || this.x >= 9)
+        {
+            return true;
+        }
+        else return false;
+    }
+    
+    protected boolean yBounce()
+    {
+        // IF the fish contacts the edge of the screen on the y-axis:
+        if (this.y <= 1 || this.y >= 7)
+        {
+            return true;
+        }
+        else return false;
     }
     
     /**

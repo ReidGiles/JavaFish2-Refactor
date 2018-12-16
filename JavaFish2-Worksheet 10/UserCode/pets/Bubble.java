@@ -28,51 +28,6 @@ public class Bubble extends Pet
         translate(startX,startY);
         rotate(0,90);
     }
-
-    /**
-     * METHOD: set the position of the fish within the aquarium
-     *
-     * @param  xpos   the position along the x axis
-     * @param  ypos   the position along the y axis
-     */
-    public void setPosition(double xpos, double ypos)
-    {
-        // SET the position using the base class method:
-        setPosition(xpos,ypos,1.0);
-    }
-    
-    /**
-     * METHOD: set the position of the fish in the aquarium
-     * 
-     * @param  x    the rqd position along the x axis
-     * @param  y    the rqd position along the y axis
-     * @param  z    the rqd position along the z axis
-     * @return      void 
-     */
-    public void setPosition(double x, double y, double z)
-    {
-        // SET position via the position variables in the base class:
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-    
-    
-    /**
-     * METHOD: set the orientation of the fish in the aquarium
-     * 
-     * @param  x    orientation about the x axis
-     * @param  y    orientation about the y axis
-     * @param  z    orientation about the z axis
-     * @return      void 
-     */
-    public void setOrientation(double x, double y, double z)
-    {
-        // SET orientation via the orientation variables in the base class:
-        this.rotateX = x;
-        this.rotateY = y;
-        this.rotateZ = z;
-    }
     
     /**
      * METHOD: Controls move behaviour.
@@ -119,11 +74,6 @@ public class Bubble extends Pet
     {
         // Call "movement()" method of parent class:
         movement();
-        if (this.y >= 8)
-        {
-            this.x = startX;
-            this.y = startY;
-        }
     }
 
 }
