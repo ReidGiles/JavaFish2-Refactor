@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=pSpeed\ pFacingDirectionX
+comment0.target=HorizontalSwim(double,\ int)
+comment1.params=pX\ pY
+comment1.target=void\ updateLocation(double,\ double)
+comment1.text=\r\n\ Updates\ '_x'\ and\ '_y'\ with\ the\ x\ and\ y\ position\ of\ method\ caller\r\n\ \r\n\ @param\ \ pX\ \ \ x\ position\ of\ method\ caller\r\n\ @param\ \ pY\ \ \ y\ position\ of\ method\ caller\r\n
+comment2.params=
+comment2.target=double\ update()
+comment2.text=\r\n\ Generates\ speed\ for\ the\ method\ caller\r\n\r\n\ @return\ \ \ \ \ ?\r\n
+numComments=3

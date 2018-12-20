@@ -1,6 +1,7 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
+import UserCode.movement.*;
 
 /**
  * Urchin contains all the behaviour and state to represent a Urchin. it must swim back and fourth along the x axis, bounce of
@@ -11,7 +12,7 @@ import Framework.DisplayObject;
  */
 public class Urchin extends Pet
 {
-    HorizontalSwim hSwim;
+    IMovement hSwim;
     /**
      * Constructor for objects of class Urchin
      */
@@ -21,7 +22,7 @@ public class Urchin extends Pet
         super("models/billboard/billboard.obj", "textures/javaFish/Urchin.png", 0.4);
         _speed = random();
         _facingDirectionX = -1;
-        hSwim = new HorizontalSwim(this, _facingDirectionX);
+        hSwim = new HorizontalSwim(_speed, _facingDirectionX);
         // INITIALISE position
         translate(5,1);
         rotate(0,90);
@@ -35,7 +36,8 @@ public class Urchin extends Pet
      */
     protected void movement()
     {
-        hSwim.movement(_speed);
+        hSwim.updateLocation(this.x, this.y);
+        translate(hSwim.update(),0);
     }
     
     /**

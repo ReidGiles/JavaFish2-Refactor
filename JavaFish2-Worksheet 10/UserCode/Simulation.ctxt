@@ -1,16 +1,14 @@
 #BlueJ class context
-comment0.target=Simulation
-comment0.text=\r\n\ Simulation\ is\ the\ top-level\ class\ for\ the\ Aquarium\ simulation.\r\n\ \r\n\ @author\ Reid\ Giles\ &\ Marc\ Price\r\n\ @version\ 16/11/2018\r\n
+comment0.params=
+comment0.target=Simulation()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Simulation\r\n
 comment1.params=
-comment1.target=Simulation()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Simulation\r\n
+comment1.target=void\ populate()
+comment1.text=\r\n\ METHOD\:\ populate\ the\ scene\ with\ fish,\ randomise\ their\ start\ speeds.\r\n\r\n\ @return\ \ \ \ \ \ void\ \r\n
 comment2.params=
-comment2.target=void\ populate()
-comment2.text=\r\n\ METHOD\:\ populate\ the\ scene\ with\ fish,\ randomise\ their\ start\ speeds.\r\n\r\n\ @return\ \ \ \ \ \ void\ \r\n
+comment2.target=double\ random()
+comment2.text=\r\n\ METHOD\:\ Return\ a\ random\ number\ between\ two\ doubles,\ used\ to\ randomize\ fish\ speed\ on\ startup.\r\n\r\n\ @return\ \ \ \ \ a\ random\ number\ between\ the\ variables\ doubles\ "low"\ and\ "high"\r\n
 comment3.params=
-comment3.target=double\ random()
-comment3.text=\r\n\ METHOD\:\ Return\ a\ random\ number\ between\ two\ doubles,\ used\ to\ randomize\ fish\ speed\ on\ startup.\r\n\r\n\ @return\ \ \ \ \ a\ random\ number\ between\ the\ variables\ doubles\ "low"\ and\ "high"\r\n
-comment4.params=
-comment4.target=void\ run()
-comment4.text=\r\n\ METHOD\:\ Run\ the\ simulation\ loop.\ \ User\ presses\ escape\ to\ exit.\r\n\r\n
-numComments=5
+comment3.target=void\ run()
+comment3.text=\r\n\ METHOD\:\ Run\ the\ simulation\ loop.\ \ User\ presses\ escape\ to\ exit.\r\n\r\n
+numComments=4
