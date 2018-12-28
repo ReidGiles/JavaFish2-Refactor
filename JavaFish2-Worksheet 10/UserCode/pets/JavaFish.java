@@ -36,10 +36,16 @@ public class JavaFish extends Pet
      */
     protected void movement()
     {
-        //hSwim.movement(_speed);
-        
         hSwim.updateLocation(this.x, this.y);
         translate(hSwim.update(),0);
+        if (hSwim.bounce() == 1)
+        {
+            rotate(0,270);
+        }
+        else if (hSwim.bounce() == 2)
+        {
+            rotate(0,90);
+        }
     }
     
     /**
@@ -47,7 +53,7 @@ public class JavaFish extends Pet
      *
      */
     public void update()
-    {
+    {        
         movement();
     }
 

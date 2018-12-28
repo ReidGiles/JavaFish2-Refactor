@@ -32,6 +32,8 @@ public class Bubbler extends Pet
         // INITIALISE position
         translate(5,1);
         rotate(90,90);
+        
+        _core.addDisplayObject(new Bubble(this.x,this.y));
     }
     
     /**
@@ -41,11 +43,11 @@ public class Bubbler extends Pet
      */
     protected void movement()
     {
-        _rndNum = _random.nextInt(100);
+        /*_rndNum = _random.nextInt(100);
         if (_rndNum == 25)
         {
             _core.addDisplayObject(new Bubble(this.x,this.y));
-        }
+        }*/
     }
     
     /**

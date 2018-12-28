@@ -1,11 +1,13 @@
 #BlueJ class context
-comment0.params=pX\ pY
-comment0.target=Bubble(double,\ double)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ JavaFish\r\n
-comment1.params=
-comment1.target=void\ movement()
-comment1.text=\r\n\ METHOD\:\ Controls\ move\ behaviour.\r\n\ \r\n\ @return\ \ \ \ \ \ void\ \r\n
+comment0.target=Bubble
+comment0.text=\r\n\ Bubble\ contains\ all\ the\ behaviour\ and\ state\ to\ represent\ a\ Bubble.\r\n\ \r\n\ @author\ Reid\ Giles\r\n\ @version\ 16/11/2018\r\n
+comment1.params=pX\ pY
+comment1.target=Bubble(double,\ double)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ JavaFish\r\n
 comment2.params=
-comment2.target=void\ update()
-comment2.text=\r\n\ METHOD\:\ to\ set\ the\ next\ frame\ of\ the\ simulation,\ called\ on\ each\ pass\ of\ the\ simulation\r\n\r\n
-numComments=3
+comment2.target=void\ movement()
+comment2.text=\r\n\ METHOD\:\ Controls\ move\ behaviour.\r\n\ \r\n\ @return\ \ \ \ \ \ void\ \r\n
+comment3.params=
+comment3.target=void\ update()
+comment3.text=\r\n\ METHOD\:\ to\ set\ the\ next\ frame\ of\ the\ simulation,\ called\ on\ each\ pass\ of\ the\ simulation\r\n\r\n
+numComments=4

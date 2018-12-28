@@ -11,4 +11,5 @@ public interface IMovement
 {
     double update();
     void updateLocation(double x, double y);
+    int bounce();
 }

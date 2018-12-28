@@ -1,6 +1,8 @@
 #BlueJ class context
-comment0.params=javaFish\ pFacingDirectionX\ pFacingDirectionY
-comment0.target=DiagonalSwim(Pet,\ int,\ int)
-comment1.params=_speed
-comment1.target=void\ movement(double)
-numComments=2
+comment0.target=DiagonalSwim
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DiagonalSwim\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=javaFish\ pFacingDirectionX\ pFacingDirectionY
+comment1.target=DiagonalSwim(Pet,\ int,\ int)
+comment2.params=_speed
+comment2.target=void\ movement(double)
+numComments=3
