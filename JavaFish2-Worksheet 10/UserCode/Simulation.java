@@ -44,6 +44,13 @@ public class Simulation
     //DECLARE a double to store our randomised speed, call it "_speed":
     private double _speed;
     
+    private int javaFishSpawn;   
+    private int seahorseSpawn;    
+    private int urchinSpawn;    
+    private int orangeFishSpawn;    
+    private int piranhaSpawn;    
+    private int bubblerSpawn;
+    
     private ArrayList<IDisplayObject> _displayObjects;
     
 
@@ -58,6 +65,12 @@ public class Simulation
         // Initialise _rndGen:
         _rndGen = new Random();
         _displayObjects = new ArrayList<IDisplayObject>();
+        javaFishSpawn = 2;
+        seahorseSpawn = 2;
+        urchinSpawn = 2;
+        orangeFishSpawn = 2;
+        piranhaSpawn = 2;
+        bubblerSpawn = 1;
     }
     
     /**
@@ -67,17 +80,35 @@ public class Simulation
      */
     public void populate()
     {
-        // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
-        _displayObjects.add(new JavaFish());
-        // Creates a Seahorse object namesd seahorse1, passes x-position, y-position and speed (provided via the return value of random():
-        _displayObjects.add(new Seahorse());
-        // Creates a Urchin object namesd urchin1, passes x-position, y-position and speed (provided via the return value of random():
-        _displayObjects.add(new Urchin());
-        // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-        _displayObjects.add(new OrangeFish());
-        // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
-        _displayObjects.add(new Piranha());
-        _displayObjects.add(new Bubbler(_core));
+        for (int i=0; i<javaFishSpawn; i++)
+        {
+            // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
+            _displayObjects.add(new JavaFish());
+        }
+        for (int i=0; i<seahorseSpawn; i++)
+        {
+            // Creates a Seahorse object namesd seahorse1, passes x-position, y-position and speed (provided via the return value of random():
+            _displayObjects.add(new Seahorse());
+        }
+        for (int i=0; i<urchinSpawn; i++)
+        {
+            // Creates a Urchin object namesd urchin1, passes x-position, y-position and speed (provided via the return value of random():
+            _displayObjects.add(new Urchin());
+        }
+        for (int i=0; i<orangeFishSpawn; i++)
+        {
+            // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
+            _displayObjects.add(new OrangeFish());
+        }
+        for (int i=0; i<piranhaSpawn; i++)
+        {
+            // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
+            _displayObjects.add(new Piranha());
+        }
+        for (int i=0; i<bubblerSpawn; i++)
+        {
+            _displayObjects.add(new Bubbler(_core));
+        }
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
@@ -111,7 +142,6 @@ public class Simulation
         _world = _core.createWorld();
         // Call the populate() method, spawns fish into the environment:
         populate();
-        
         // Start simulation loop:
         while (!endSim)
         {
