@@ -1,6 +1,7 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
+import UserCode.movement.*;
 
 /**
  * JavaFish contains all the behaviour ans state to represent a Piranha. It must randomly choose to swim along the x or y axis,
@@ -11,7 +12,7 @@ import Framework.DisplayObject;
  */
 public class Piranha extends Pet
 { 
-    RoboSwim rSwim;
+    IMovement rSwim;
     /**
      * Constructor for objects of class Piranha
      */
@@ -21,7 +22,8 @@ public class Piranha extends Pet
         super("models/billboard/billboard.obj", "textures/javaFish/PiranhaGreen.png", 0.4);
         _speed = random();
         _facingDirectionX = -1;
-        rSwim = new RoboSwim(this, _facingDirectionX, _facingDirectionY);
+        _facingDirectionY = -1;
+        rSwim = new RoboSwim(_speed, _facingDirectionX, _facingDirectionY);
         // INITIALISE position
         translate(5,5);
         rotate(0,90);
@@ -35,7 +37,16 @@ public class Piranha extends Pet
      */
     protected void movement()
     {
-        rSwim.movement(_speed);
+        rSwim.updateLocation(this.x, this.y);
+        translate(rSwim.updateX(),rSwim.updateY());
+        if (rSwim.bounce() == 1)
+        {
+            rotate(0,270);
+        }
+        else if (rSwim.bounce() == 2)
+        {
+            rotate(0,90);
+        }
     }
     
     /**
@@ -44,7 +55,6 @@ public class Piranha extends Pet
      */
     public void update()
     {
-        // Call "snakeySwim()" method of parent class:
         movement();
     }
 
