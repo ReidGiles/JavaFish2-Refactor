@@ -7,19 +7,22 @@ package UserCode.movement;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DiagonalSwim
+public class DiagonalSwim implements IMovement
 {
     double _x;
     double _y;
     double _initialSpeed;
-    double _speed;
+    double _speedX;
+    double _speedY;
     double _facingDirectionX;
     double _facingDirectionY;
-    public DiagonalSwim(double pSpeed, int pFacingDirectionX)
+    public DiagonalSwim(double pSpeed, int pFacingDirectionX, int pFacingDirectionY)
     {
         _initialSpeed = pSpeed;
         _facingDirectionX = pFacingDirectionX;
-        _speed = _initialSpeed * _facingDirectionX;
+        _facingDirectionY = pFacingDirectionY;
+        _speedX = _initialSpeed * _facingDirectionX;
+        _speedY = _initialSpeed * _facingDirectionY;
     }
     
     /**
@@ -44,34 +47,36 @@ public class DiagonalSwim
         {
             return 2;
         }
-        else if (_y <= 1)
-        {
-            return 3;
-        }
-        else if (_y >= 9)
-        {
-            return 4;
-        }
         else return 0;
     }
     
-
     /**
      * Generates speed for the method caller
      *
      * @return     ?
      */
-    public double update()
+    public double updateX()
     {
         if (_x <= 1 || _x >= 9)
         {
             _facingDirectionX *= -1;
-            _speed *= _facingDirectionX;
+            _speedX *= _facingDirectionX;
         }
-        if (_y <= 1 || _y >= 9)
+        return _speedX;
+    }
+    
+    /**
+     * Generates speed for the method caller
+     *
+     * @return     ?
+     */
+    public double updateY()
+    {
+        if (_y <= 1 || _y >= 7)
         {
             _facingDirectionY *= -1;
+            _speedY *= _facingDirectionY;
         }
-        return _speed;
+        return _speedY;
     }
 }

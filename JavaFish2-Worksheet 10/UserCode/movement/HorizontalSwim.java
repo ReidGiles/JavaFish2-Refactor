@@ -52,7 +52,7 @@ public class HorizontalSwim implements IMovement
      *
      * @return     ?
      */
-    public double update()
+    public double updateX()
     {
         if (_x <= 1 || _x >= 9)
         {
@@ -60,5 +60,15 @@ public class HorizontalSwim implements IMovement
             _speed *= _facingDirectionX;
         }
         return _speed;
+    }
+    
+    /**
+     * Generates speed for the method caller
+     *
+     * @return     ?
+     */
+    public double updateY()
+    {
+        return 0;
     }
 }

@@ -9,7 +9,8 @@ package UserCode.movement;
  */
 public interface IMovement
 {
-    double update();
+    double updateX();
+    double updateY();
     void updateLocation(double x, double y);
     int bounce();
 }

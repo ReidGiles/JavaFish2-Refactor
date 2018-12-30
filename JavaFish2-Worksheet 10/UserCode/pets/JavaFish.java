@@ -37,7 +37,7 @@ public class JavaFish extends Pet
     protected void movement()
     {
         hSwim.updateLocation(this.x, this.y);
-        translate(hSwim.update(),0);
+        translate(hSwim.updateX(),hSwim.updateY());
         if (hSwim.bounce() == 1)
         {
             rotate(0,270);

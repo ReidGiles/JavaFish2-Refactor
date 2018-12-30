@@ -1,6 +1,7 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
+import UserCode.movement.*;
 
 /**
  * OrangeFish contains all the behaviour and state to represent a Seahorse. It must swim diagonally bouncing of the edge of the
@@ -11,7 +12,7 @@ import Framework.DisplayObject;
  */
 public class Seahorse extends Pet
 {
-    DiagonalSwim dSwim;
+    IMovement dSwim;
     /**
      * Constructor for objects of class Seahorse
      */
@@ -27,7 +28,7 @@ public class Seahorse extends Pet
         // INITIALISE position
         translate(8,4);
         rotate(180,270);
-        dSwim = new DiagonalSwim(this, _facingDirectionX, _facingDirectionY);
+        dSwim = new DiagonalSwim(_speed, _facingDirectionX, _facingDirectionY);
     }
     
     /**
@@ -37,7 +38,16 @@ public class Seahorse extends Pet
      */
     public void movement()
     {
-        dSwim.movement(_speed);
+        dSwim.updateLocation(this.x, this.y);
+        translate(dSwim.updateX(),dSwim.updateY());
+        if (dSwim.bounce() == 1)
+        {
+            rotate(180,90);
+        }
+        else if (dSwim.bounce() == 2)
+        {
+            rotate(180,270);
+        }
     }
            
     /**
