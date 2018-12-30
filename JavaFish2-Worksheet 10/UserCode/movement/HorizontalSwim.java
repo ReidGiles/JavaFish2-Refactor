@@ -8,11 +8,11 @@
  */
 public class HorizontalSwim implements IMovement
 {
-    double _x;
-    double _y;
-    double _initialSpeed;
-    double _speed;
-    double _facingDirectionX;
+    private double _x;
+    private double _y;
+    private double _initialSpeed;
+    private double _speed;
+    private int _facingDirectionX;
     public HorizontalSwim(double pSpeed, int pFacingDirectionX)
     {
         _initialSpeed = pSpeed;

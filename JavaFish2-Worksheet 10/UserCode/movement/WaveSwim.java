@@ -2,12 +2,12 @@ package UserCode.movement;
 
 
 /**
- * Write a description of class DiagonalSwim here.
+ * Write a description of class WaveSwim here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DiagonalSwim implements IMovement
+public class WaveSwim implements IMovement
 {
     private double _x;
     private double _y;
@@ -16,13 +16,16 @@ public class DiagonalSwim implements IMovement
     private double _speedY;
     private int _facingDirectionX;
     private int _facingDirectionY;
-    public DiagonalSwim(double pSpeed, int pFacingDirectionX, int pFacingDirectionY)
+    private float _timeCounter;
+    private double _rotationY;
+    public WaveSwim(double pSpeed, int pFacingDirectionX, int pFacingDirectionY)
     {
         _initialSpeed = pSpeed;
         _facingDirectionX = pFacingDirectionX;
         _facingDirectionY = pFacingDirectionY;
         _speedX = _initialSpeed * _facingDirectionX;
         _speedY = _initialSpeed * _facingDirectionY;
+        _rotationY = Math.cos(_timeCounter);
     }
     
     /**
@@ -72,11 +75,11 @@ public class DiagonalSwim implements IMovement
      */
     public double updateY()
     {
-        if (_y <= 1 || _y >= 7)
-        {
-            _facingDirectionY *= -1;
-            _speedY *= _facingDirectionY;
-        }
+        // Speed of rotation:
+        _timeCounter += 0.15F;           
+        _rotationY = Math.cos(_timeCounter);
+        // Length of rotation on y axis:
+        _speedY = (float)_rotationY * 0.03;
         return _speedY;
     }
 }

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=WaveSwim
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WaveSwim\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=pSpeed\ pFacingDirectionX\ pFacingDirectionY
+comment1.target=WaveSwim(double,\ int,\ int)
+comment2.params=pX\ pY
+comment2.target=void\ updateLocation(double,\ double)
+comment2.text=\r\n\ Updates\ '_x'\ and\ '_y'\ with\ the\ x\ and\ y\ position\ of\ method\ caller\r\n\ \r\n\ @param\ \ pX\ \ \ x\ position\ of\ method\ caller\r\n\ @param\ \ pY\ \ \ y\ position\ of\ method\ caller\r\n
+comment3.params=
+comment3.target=int\ bounce()
+comment4.params=
+comment4.target=double\ updateX()
+comment4.text=\r\n\ Generates\ speed\ for\ the\ method\ caller\r\n\r\n\ @return\ \ \ \ \ ?\r\n
+comment5.params=
+comment5.target=double\ updateY()
+comment5.text=\r\n\ Generates\ speed\ for\ the\ method\ caller\r\n\r\n\ @return\ \ \ \ \ ?\r\n
+numComments=6
