@@ -16,16 +16,17 @@ public class Piranha extends Pet
     /**
      * Constructor for objects of class Piranha
      */
-    public Piranha()
+    public Piranha(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/PiranhaGreen.png", 0.4);
-        _speed = random();
+        _speed = pSpeed;
         _facingDirectionX = -1;
         _facingDirectionY = -1;
         rSwim = new RoboSwim(_speed, _facingDirectionX, _facingDirectionY);
+        double[] _startLocation = pStartLocation;
         // INITIALISE position
-        translate(5,5);
+        translate(_startLocation[0],_startLocation[1]);
         rotate(0,90);
     }
     

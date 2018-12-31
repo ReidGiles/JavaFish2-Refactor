@@ -16,15 +16,16 @@ public class Urchin extends Pet
     /**
      * Constructor for objects of class Urchin
      */
-    public Urchin()
+    public Urchin(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Urchin.png", 0.4);
-        _speed = random();
+        _speed = pSpeed;
         _facingDirectionX = -1;
         hSwim = new HorizontalSwim(_speed, _facingDirectionX);
+        double[] _startLocation = pStartLocation;
         // INITIALISE position
-        translate(5,1);
+        translate(_startLocation[0],1);
         rotate(0,90);
     }
     

@@ -3,9 +3,6 @@ package UserCode.pets;
 import Framework.DisplayObject;
 import Framework.Core;
 import Framework.ICore;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.Random;
 
 /**
  * Bubble contains all the behaviour and state to represent a Bubble.
@@ -16,8 +13,6 @@ import java.util.Random;
 public class Bubbler extends Pet
 { 
     ICore _core;
-    Random _random;
-    int _rndNum;
     /**
      * Constructor for objects of class Bubbler
      */
@@ -25,10 +20,7 @@ public class Bubbler extends Pet
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Bubbler.png", 0.4);
-        _speed = random();
-        _facingDirectionX = -1;
         _core = pCore;
-        _random = new Random();
         // INITIALISE position
         translate(5,1);
         rotate(90,90);

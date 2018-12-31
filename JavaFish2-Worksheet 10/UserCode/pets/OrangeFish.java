@@ -16,18 +16,19 @@ public class OrangeFish extends Pet
     /**
      * Constructor for objects of class OrangeFish
      */
-    public OrangeFish()
+    public OrangeFish(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Orange_Fish.png", 0.4);
-        _speed = random();
+        _speed = pSpeed;
         // Initialise _facingDirectionX to -1:
         _facingDirectionX = -1;
         // Initialise _facingDirectionY to -1:
         _facingDirectionY = -1;
         wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
+        double[] _startLocation = pStartLocation;
         // INITIALISE position
-        translate(8,2);
+        translate(_startLocation[0],_startLocation[1]);
         rotate(0,90);
     }
     

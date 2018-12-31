@@ -44,6 +44,10 @@ public class Simulation
     //DECLARE a double to store our randomised speed, call it "_speed":
     private double _speed;
     
+    private int[] randomLocation;
+    private int randomLocationX;
+    private int randomLocationY;
+    
     private int javaFishSpawn;   
     private int seahorseSpawn;    
     private int urchinSpawn;    
@@ -83,27 +87,27 @@ public class Simulation
         for (int i=0; i<javaFishSpawn; i++)
         {
             // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new JavaFish());
+            _displayObjects.add(new JavaFish(random(), randomLocation()));
         }
         for (int i=0; i<seahorseSpawn; i++)
         {
             // Creates a Seahorse object namesd seahorse1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Seahorse());
+            _displayObjects.add(new Seahorse(random(), randomLocation()));
         }
         for (int i=0; i<urchinSpawn; i++)
         {
             // Creates a Urchin object namesd urchin1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Urchin());
+            _displayObjects.add(new Urchin(random(), randomLocation()));
         }
         for (int i=0; i<orangeFishSpawn; i++)
         {
             // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new OrangeFish());
+            _displayObjects.add(new OrangeFish(random(), randomLocation()));
         }
         for (int i=0; i<piranhaSpawn; i++)
         {
             // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Piranha());
+            _displayObjects.add(new Piranha(random(), randomLocation()));
         }
         for (int i=0; i<bubblerSpawn; i++)
         {
@@ -130,6 +134,14 @@ public class Simulation
         _speed = _randomLow + (_randomHigh - _randomLow) * _rndGen.nextDouble();
         // Return _speed:
         return _speed;
+    }
+    
+    private double[] randomLocation()
+    {
+        randomLocationX = (_rndGen.nextInt(9) + 1);
+        randomLocationY = (_rndGen.nextInt(7) + 1);
+        double[] randomLocation = {randomLocationX, randomLocationY};
+        return randomLocation;
     }
 
     /**
@@ -159,7 +171,6 @@ public class Simulation
         
         // EXIT: cleanly by closing-down the environment:
         _core.destroyWorld();
-
     }
 
 }

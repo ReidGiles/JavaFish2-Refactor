@@ -16,17 +16,18 @@ public class Seahorse extends Pet
     /**
      * Constructor for objects of class Seahorse
      */
-    public Seahorse()
+    public Seahorse(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Seahorse.png", 0.4);
-        _speed = random();
+        _speed = pSpeed;
         // Initialise _facingDirectionX to -1:
         _facingDirectionX = -1;
         // Initialise _facingDirectionY to -1:
         _facingDirectionY = -1;
+        double[] _startLocation = pStartLocation;
         // INITIALISE position
-        translate(8,4);
+        translate(_startLocation[0],_startLocation[1]);
         rotate(180,270);
         dSwim = new DiagonalSwim(_speed, _facingDirectionX, _facingDirectionY);
     }

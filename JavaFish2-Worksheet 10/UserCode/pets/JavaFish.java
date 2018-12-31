@@ -16,14 +16,15 @@ public class JavaFish extends Pet
     /**
      * Constructor for objects of class JavaFish
      */
-    public JavaFish()
+    public JavaFish(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/JavaFish.png", 0.4);
-        _speed = random();
+        _speed = pSpeed;
         _facingDirectionX = -1;
+        double[] _startLocation = pStartLocation;
         // INITIALISE position
-        translate(8,6);
+        translate(_startLocation[0],_startLocation[1]);
         rotate(0,90);
         hSwim = new HorizontalSwim(_speed, _facingDirectionX);
     }

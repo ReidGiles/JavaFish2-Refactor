@@ -1,6 +1,7 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
+import UserCode.movement.*;
 
 /**
  * Bubble contains all the behaviour and state to represent a Bubble.
@@ -10,6 +11,7 @@ import Framework.DisplayObject;
  */
 public class Bubble extends Pet
 { 
+    IMovement wSwim;
     double startX;
     double startY;
     /**
@@ -19,11 +21,12 @@ public class Bubble extends Pet
     {
         // initialise instance variables
         super("sphere", "textures/javaFish/Bubble.png", 0.4);
-        _speed = random();
+        _speed = -0.020;
         _facingDirectionX = -1;
         _facingDirectionY = -1;
         startX = pX;
         startY = pY;
+        wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
         // INITIALISE position
         translate(startX,startY);
         rotate(0,90);
@@ -36,19 +39,11 @@ public class Bubble extends Pet
      */
     protected void movement()
     {
-        // Speed of rotation:
-        _timeCounter += 0.15F;           
-        _rotationY = Math.cos(_timeCounter);
-        // Length of rotation on y axis:
-        _speedY = (float)_rotationY * 0.03; 
-        /* IF _facingDirectionX is equal to -1, fish moves left along the x-axis at the rate of "_speed"
-         * IF _facingDirectionX is equal to 1, fish moves right along the x-axis at the rate of "_speed":
-        */
-        this.x = this.x - _speedY * _facingDirectionX;
-        // The fish moves oscilates along the y axis:
-        this.y = this.y - _speed * _facingDirectionY;
-        if (this.y >= 7)
+        wSwim.updateLocation(this.x, this.y);
+        translate(wSwim.updateY(),wSwim.updateX());
+        if (wSwim.bounce() == 4)
         {
+            this.x = startX;
             this.y = startY;
         }
     }

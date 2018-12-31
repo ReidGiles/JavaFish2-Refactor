@@ -50,6 +50,14 @@ public class WaveSwim implements IMovement
         {
             return 2;
         }
+        else if (_y <= 1)
+        {
+            return 3;
+        }
+        else if (_y >= 7)
+        {
+            return 4;
+        }
         else return 0;
     }
     

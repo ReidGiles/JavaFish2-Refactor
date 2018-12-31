@@ -106,7 +106,6 @@ public class RoboSwim implements IMovement
                 _facingDirectionY = -1;
                 _speedY = _initialSpeed *= _facingDirectionY;
                 _speedX = 0;
-                System.out.println(_speedY);
                 break;
         }
         
