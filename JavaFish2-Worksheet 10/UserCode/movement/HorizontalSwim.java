@@ -1,4 +1,5 @@
  package UserCode.movement;
+ import UserCode.UserException.*;
 
 /**
  * Abstract class HorizontalSwim - write a description of the class here
@@ -13,9 +14,16 @@ public class HorizontalSwim implements IMovement
     private double _initialSpeed;
     private double _speed;
     private int _facingDirectionX;
-    public HorizontalSwim(double pSpeed, int pFacingDirectionX)
+    public HorizontalSwim(double pSpeed, int pFacingDirectionX) throws ArgumentOutOfBoundsException
     {
-        _initialSpeed = pSpeed;
+        if (pSpeed > 0.005 && pSpeed < 0.05)
+        {
+            _initialSpeed = pSpeed;
+        }
+        else
+        {
+            throw new ArgumentOutOfBoundsException("speed parameter must be within range: 0.005 < pSpeed < 0.05");
+        }
         _facingDirectionX = pFacingDirectionX;
         _speed = _initialSpeed * _facingDirectionX;
     }

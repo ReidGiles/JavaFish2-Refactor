@@ -1,12 +1,10 @@
 #BlueJ class context
-comment0.target=IMovement
-comment0.text=\r\n\ Write\ a\ description\ of\ interface\ IMovement\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.params=
+comment0.target=double\ updateX()
 comment1.params=
-comment1.target=double\ updateX()
-comment2.params=
-comment2.target=double\ updateY()
-comment3.params=x\ y
-comment3.target=void\ updateLocation(double,\ double)
-comment4.params=
-comment4.target=int\ bounce()
-numComments=5
+comment1.target=double\ updateY()
+comment2.params=x\ y
+comment2.target=void\ updateLocation(double,\ double)
+comment3.params=
+comment3.target=int\ bounce()
+numComments=4

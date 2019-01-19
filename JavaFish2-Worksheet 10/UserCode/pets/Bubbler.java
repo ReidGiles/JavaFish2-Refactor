@@ -1,8 +1,6 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
-import Framework.Core;
-import Framework.ICore;
 
 /**
  * Bubble contains all the behaviour and state to represent a Bubble.
@@ -12,20 +10,16 @@ import Framework.ICore;
  */
 public class Bubbler extends Pet
 { 
-    ICore _core;
     /**
      * Constructor for objects of class Bubbler
      */
-    public Bubbler(ICore pCore)
+    public Bubbler()
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Bubbler.png", 0.4);
-        _core = pCore;
         // INITIALISE position
         translate(5,1);
         rotate(90,90);
-        
-        _core.addDisplayObject(new Bubble(this.x,this.y));
     }
     
     /**

@@ -17,18 +17,17 @@ public class Bubble extends Pet
     /**
      * Constructor for objects of class JavaFish
      */
-    public Bubble(double pX, double pY)
+    public Bubble(double[] pStartLocation)
     {
         // initialise instance variables
         super("sphere", "textures/javaFish/Bubble.png", 0.4);
         _speed = -0.020;
         _facingDirectionX = -1;
         _facingDirectionY = -1;
-        startX = pX;
-        startY = pY;
+        double[] _startLocation = pStartLocation;
         wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
         // INITIALISE position
-        translate(startX,startY);
+        translate(_startLocation[0],_startLocation[1]);
         rotate(0,90);
     }
     
@@ -46,6 +45,18 @@ public class Bubble extends Pet
             this.x = startX;
             this.y = startY;
         }
+    }
+    
+    /**
+     * Updates '_x' and '_y' with the x and y position of method caller
+     * 
+     * @param  pX   x position of method caller
+     * @param  pY   y position of method caller
+     */
+    public void updateLocation(double pX, double pY)
+    {
+        startX = pX;
+        startY = pY;
     }
     
     /**

@@ -86,37 +86,51 @@ public class Simulation
     {
         for (int i=0; i<javaFishSpawn; i++)
         {
-            // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new JavaFish(random(), randomLocation()));
+            double[] startLocation = randomLocation();
+            // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():            
+            _displayObjects.add(new JavaFish(random(), startLocation));
+            _displayObjects.add(new Bubble(startLocation));
         }
         for (int i=0; i<seahorseSpawn; i++)
         {
+            double[] startLocation = randomLocation();
             // Creates a Seahorse object namesd seahorse1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Seahorse(random(), randomLocation()));
+            _displayObjects.add(new Seahorse(random(), startLocation));
         }
         for (int i=0; i<urchinSpawn; i++)
         {
+            double[] startLocation = randomLocation();
             // Creates a Urchin object namesd urchin1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Urchin(random(), randomLocation()));
+            _displayObjects.add(new Urchin(random(), startLocation));
         }
         for (int i=0; i<orangeFishSpawn; i++)
         {
+            double[] startLocation = randomLocation();
             // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new OrangeFish(random(), randomLocation()));
+            _displayObjects.add(new OrangeFish(random(), startLocation));
         }
         for (int i=0; i<piranhaSpawn; i++)
         {
+            double[] startLocation = randomLocation();
             // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Piranha(random(), randomLocation()));
+            _displayObjects.add(new Piranha(random(), startLocation));
         }
         for (int i=0; i<bubblerSpawn; i++)
         {
-            _displayObjects.add(new Bubbler(_core));
+            _displayObjects.add(new Bubbler());
         }
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
         }
+        for (IDisplayObject iDisplayObject : _displayObjects)
+        {
+            if (iDisplayObject instanceof JavaFish)
+            {
+                System.out.println("test");
+            }
+        }
+        
     }
     
     /**

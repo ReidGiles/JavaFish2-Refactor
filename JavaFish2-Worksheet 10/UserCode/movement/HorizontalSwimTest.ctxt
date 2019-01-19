@@ -1,0 +1,34 @@
+#BlueJ class context
+comment0.target=HorizontalSwimTest
+comment0.text=\r\n\ The\ test\ class\ HorizontalSwimTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Test\ Conditions\:\r\n\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ 0.005\ <\ pSpeed\ <\ 0.05\ is\ not\ true.\ Throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\ \=\=\ (1\ ||\ -1)\ is\ not\ true.\r\n\ updateLocation()\:\r\n\ bounce()\:\r\n\ \r\n
+comment1.params=
+comment1.target=HorizontalSwimTest()
+comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ HorizontalSwimTest\r\n
+comment10.params=
+comment10.target=void\ HorizontalSwim_test7()
+comment10.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.04.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ setUp()
+comment2.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment3.params=
+comment3.target=void\ tearDown()
+comment3.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+comment4.params=
+comment4.target=void\ HorizontalSwim_test1()
+comment4.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pSpeed\=-50.\r\n\ \r\n
+comment5.params=
+comment5.target=void\ HorizontalSwim_test2()
+comment5.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.004.\r\n\ \r\n
+comment6.params=
+comment6.target=void\ HorizontalSwim_test3()
+comment6.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.06.\r\n\ \r\n
+comment7.params=
+comment7.target=void\ HorizontalSwim_test4()
+comment7.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pSpeed\=50.\r\n\ \r\n
+comment8.params=
+comment8.target=void\ HorizontalSwim_test5()
+comment8.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.006.\r\n\ \r\n
+comment9.params=
+comment9.target=void\ HorizontalSwim_test6()
+comment9.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.01.\r\n\ \r\n
+numComments=11
