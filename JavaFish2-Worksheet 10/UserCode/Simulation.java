@@ -77,6 +77,10 @@ public class Simulation
         bubblerSpawn = 1;
     }
     
+    public static void main()
+    {
+    }
+    
     /**
      * METHOD: populate the scene with fish, randomise their start speeds.
      *
@@ -122,15 +126,7 @@ public class Simulation
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
-        }
-        for (IDisplayObject iDisplayObject : _displayObjects)
-        {
-            if (iDisplayObject instanceof JavaFish)
-            {
-                System.out.println("test");
-            }
-        }
-        
+        }        
     }
     
     /**

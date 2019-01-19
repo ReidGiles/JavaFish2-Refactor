@@ -22,11 +22,11 @@ public class JavaFish extends Pet
         super("models/billboard/billboard.obj", "textures/javaFish/JavaFish.png", 0.4);
         _speed = pSpeed;
         _facingDirectionX = -1;
+        hSwim = new HorizontalSwim(_speed, _facingDirectionX);
         double[] _startLocation = pStartLocation;
         // INITIALISE position
         translate(_startLocation[0],_startLocation[1]);
-        rotate(0,90);
-        hSwim = new HorizontalSwim(_speed, _facingDirectionX);
+        rotate(0,90);       
     }
     
     /**

@@ -188,4 +188,101 @@ public class HorizontalSwimTest
             fail("ArgumentOutOfBoundsException was thrown when HorizontalSwim(0.04,1) was called");
         }
     }
+    
+    /**
+     * METHOD: Test condition HorizontalSwim(): throws ArgumentOutOfBoundsException if pFacingDirectionX=-10.
+     * 
+     */
+    @Test
+    public void HorizontalSwim_test8()
+    {        
+        // DECLARE a boolean to flag a test pass/failure, call it 'pass', initialise to false:
+        boolean pass = false;       
+        try
+        {
+            IMovement testHswim = new HorizontalSwim(0.01,-10);
+        }
+        catch(ArgumentOutOfBoundsException e)
+        {
+            pass = true;
+        }
+        
+        assertTrue("ArgumentOutOfBoundsException was not thrown when HorizontalSwim(0.01,-10) was called", pass);
+    }
+    
+    /**
+     * METHOD: Test condition HorizontalSwim(): throws ArgumentOutOfBoundsException if pFacingDirectionX=0.
+     * 
+     */
+    @Test
+    public void HorizontalSwim_test9()
+    {        
+        // DECLARE a boolean to flag a test pass/failure, call it 'pass', initialise to false:
+        boolean pass = false;       
+        try
+        {
+            IMovement testHswim = new HorizontalSwim(0.01,0);
+        }
+        catch(ArgumentOutOfBoundsException e)
+        {
+            pass = true;
+        }
+        
+        assertTrue("ArgumentOutOfBoundsException was not thrown when HorizontalSwim(0.01,0) was called", pass);
+    }
+    
+    /**
+     * METHOD: Test condition HorizontalSwim(): throws ArgumentOutOfBoundsException if pFacingDirectionX=10.
+     * 
+     */
+    @Test
+    public void HorizontalSwim_test10()
+    {        
+        // DECLARE a boolean to flag a test pass/failure, call it 'pass', initialise to false:
+        boolean pass = false;       
+        try
+        {
+            IMovement testHswim = new HorizontalSwim(0.01,10);
+        }
+        catch(ArgumentOutOfBoundsException e)
+        {
+            pass = true;
+        }
+        
+        assertTrue("ArgumentOutOfBoundsException was not thrown when HorizontalSwim(0.01,10) was called", pass);
+    }
+    
+    /**
+     * METHOD: Test condition HorizontalSwim(): DOES NOT throw ArgumentOutOfBoundsException if pFacingDirectionX=1.
+     * 
+     */
+    @Test
+    public void HorizontalSwim_test11()
+    {            
+        try
+        {
+            IMovement testHswim = new HorizontalSwim(0.01,1);
+        }
+        catch(ArgumentOutOfBoundsException e)
+        {
+            fail("ArgumentOutOfBoundsException was thrown when HorizontalSwim(0.01,1) was called");
+        }
+    }
+    
+    /**
+     * METHOD: Test condition HorizontalSwim(): DOES NOT throw ArgumentOutOfBoundsException if pFacingDirectionX=-1.
+     * 
+     */
+    @Test
+    public void HorizontalSwim_test12()
+    {
+        try
+        {
+            IMovement testHswim = new HorizontalSwim(0.01,-1);
+        }
+        catch(ArgumentOutOfBoundsException e)
+        {
+            fail("ArgumentOutOfBoundsException was thrown when HorizontalSwim(0.01,-1) was called");
+        }
+    }
 }

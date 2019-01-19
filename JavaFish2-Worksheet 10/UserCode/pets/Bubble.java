@@ -40,11 +40,11 @@ public class Bubble extends Pet
     {
         wSwim.updateLocation(this.x, this.y);
         translate(wSwim.updateY(),wSwim.updateX());
-        if (wSwim.bounce() == 4)
+        /*if (wSwim.bounce() == 4)
         {
             this.x = startX;
             this.y = startY;
-        }
+        }/*/
     }
     
     /**

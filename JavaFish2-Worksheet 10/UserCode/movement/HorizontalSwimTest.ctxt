@@ -7,6 +7,21 @@ comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ HorizontalSwimTest\r
 comment10.params=
 comment10.target=void\ HorizontalSwim_test7()
 comment10.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.04.\r\n\ \r\n
+comment11.params=
+comment11.target=void\ HorizontalSwim_test8()
+comment11.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\=-10.\r\n\ \r\n
+comment12.params=
+comment12.target=void\ HorizontalSwim_test9()
+comment12.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\=0.\r\n\ \r\n
+comment13.params=
+comment13.target=void\ HorizontalSwim_test10()
+comment13.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\=10.\r\n\ \r\n
+comment14.params=
+comment14.target=void\ HorizontalSwim_test11()
+comment14.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\=1.\r\n\ \r\n
+comment15.params=
+comment15.target=void\ HorizontalSwim_test12()
+comment15.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\=-1.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ setUp()
 comment2.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
@@ -31,4 +46,4 @@ comment8.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ th
 comment9.params=
 comment9.target=void\ HorizontalSwim_test6()
 comment9.text=\r\n\ METHOD\:\ Test\ condition\ HorizontalSwim()\:\ DOES\ NOT\ throw\ ArgumentOutOfBoundsException\ if\ pSpeed\=0.01.\r\n\ \r\n
-numComments=11
+numComments=16

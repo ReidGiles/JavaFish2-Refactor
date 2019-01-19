@@ -24,7 +24,14 @@ public class HorizontalSwim implements IMovement
         {
             throw new ArgumentOutOfBoundsException("speed parameter must be within range: 0.005 < pSpeed < 0.05");
         }
-        _facingDirectionX = pFacingDirectionX;
+        if (pFacingDirectionX == 1 || pFacingDirectionX == -1)
+        {
+            _facingDirectionX = pFacingDirectionX;
+        }
+        else
+        {
+            throw new ArgumentOutOfBoundsException("_facingDirectionX parameter must be within range: 1 || -1");
+        }
         _speed = _initialSpeed * _facingDirectionX;
     }
     
