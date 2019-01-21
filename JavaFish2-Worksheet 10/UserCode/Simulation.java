@@ -1,5 +1,4 @@
 package UserCode;
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Notes:
 // * Add code to this as necessary to produce your simulation.
@@ -57,7 +56,6 @@ public class Simulation
     
     private ArrayList<IDisplayObject> _displayObjects;
     
-
     /**
      * Constructor for objects of class Simulation
      */
@@ -79,6 +77,10 @@ public class Simulation
     
     public static void main()
     {
+        Simulation sim = new Simulation();
+        // Call the populate() method, spawns fish into the environment:
+        sim.populate();
+        sim.run();
     }
     
     /**
@@ -91,9 +93,8 @@ public class Simulation
         for (int i=0; i<javaFishSpawn; i++)
         {
             double[] startLocation = randomLocation();
-            // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():            
+            // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
             _displayObjects.add(new JavaFish(random(), startLocation));
-            _displayObjects.add(new Bubble(startLocation));
         }
         for (int i=0; i<seahorseSpawn; i++)
         {
@@ -111,7 +112,7 @@ public class Simulation
         {
             double[] startLocation = randomLocation();
             // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new OrangeFish(random(), startLocation));
+            _displayObjects.add(new OrangeFish(random(), startLocation, _core));
         }
         for (int i=0; i<piranhaSpawn; i++)
         {
@@ -126,7 +127,14 @@ public class Simulation
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
-        }        
+        }
+        for (IDisplayObject displayObject : _displayObjects)
+        {
+            if (displayObject instanceof JavaFish)
+            {
+                //Create bubble for JavaFish                
+            }
+        }
     }
     
     /**
@@ -162,8 +170,6 @@ public class Simulation
     {
         // CREATE the environment:
         _world = _core.createWorld();
-        // Call the populate() method, spawns fish into the environment:
-        populate();
         // Start simulation loop:
         while (!endSim)
         {

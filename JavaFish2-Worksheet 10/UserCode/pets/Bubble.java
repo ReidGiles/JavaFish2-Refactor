@@ -9,25 +9,24 @@ import UserCode.movement.*;
  * @author Reid Giles
  * @version 16/11/2018
  */
-public class Bubble extends Pet
+public class Bubble extends Pet implements IBubble
 { 
-    IMovement wSwim;
+    IMovement bSwim;
     double startX;
     double startY;
     /**
      * Constructor for objects of class JavaFish
      */
-    public Bubble(double[] pStartLocation)
+    public Bubble(double pX, double pY)
     {
         // initialise instance variables
-        super("sphere", "textures/javaFish/Bubble.png", 0.4);
+        super("sphere", "textures/javaFish/Bubble.png", 0.1);
         _speed = -0.020;
         _facingDirectionX = -1;
         _facingDirectionY = -1;
-        double[] _startLocation = pStartLocation;
-        wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
+        bSwim = new BubbleSwim(_speed, _facingDirectionX, _facingDirectionY);
         // INITIALISE position
-        translate(_startLocation[0],_startLocation[1]);
+        translate(pX,pY);
         rotate(0,90);
     }
     
@@ -38,13 +37,8 @@ public class Bubble extends Pet
      */
     protected void movement()
     {
-        wSwim.updateLocation(this.x, this.y);
-        translate(wSwim.updateY(),wSwim.updateX());
-        /*if (wSwim.bounce() == 4)
-        {
-            this.x = startX;
-            this.y = startY;
-        }/*/
+        bSwim.updateLocation(this.x, this.y);
+        translate(bSwim.updateY(),bSwim.updateX());        
     }
     
     /**
@@ -55,8 +49,17 @@ public class Bubble extends Pet
      */
     public void updateLocation(double pX, double pY)
     {
-        startX = pX;
-        startY = pY;
+        this.x = pX;
+        this.y = pY;
+    }
+    
+    public boolean requestReset()
+    {
+        if (bSwim.bounce() == 4)
+        {
+            return true;
+        }
+        else return false;
     }
     
     /**

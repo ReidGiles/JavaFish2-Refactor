@@ -2,6 +2,11 @@ package UserCode.pets;
 
 import Framework.DisplayObject;
 import UserCode.movement.*;
+import Framework.Core;
+import Framework.ICore;
+import Framework.IDisplayObject;
+import java.applet.*;
+import java.net.*;
 
 /**
  * JavaFish contains all the behaviour ans state to represent a OrangeFish. It must swim in a wave pattern along the x axis, bounce
@@ -13,13 +18,25 @@ import UserCode.movement.*;
 public class OrangeFish extends Pet
 { 
     IMovement wSwim;
+    ICore _core;
+    IBubble bubble;
+    AudioClip clip;
     /**
      * Constructor for objects of class OrangeFish
      */
-    public OrangeFish(double pSpeed, double[] pStartLocation)
+    public OrangeFish(double pSpeed, double[] pStartLocation, ICore pCore)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Orange_Fish.png", 0.4);
+        try
+        {
+            clip = Applet.newAudioClip(new URL("http://formenmedia.ign.com/media/news/image/gear/bubblegurggle.wav"));
+            clip.play();
+        }
+        catch (MalformedURLException murle) {
+            System.out.println(murle);
+        }
+        _core = pCore;
         _speed = pSpeed;
         // Initialise _facingDirectionX to -1:
         _facingDirectionX = -1;
@@ -27,6 +44,8 @@ public class OrangeFish extends Pet
         _facingDirectionY = -1;
         wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
         double[] _startLocation = pStartLocation;
+        bubble = new Bubble(_startLocation[0],_startLocation[1]);
+        _core.addDisplayObject((IDisplayObject)bubble);
         // INITIALISE position
         translate(_startLocation[0],_startLocation[1]);
         rotate(0,90);
@@ -59,6 +78,12 @@ public class OrangeFish extends Pet
     public void update()
     {
         movement();
+        //_core.addDisplayObject((IDisplayObject)bubble);
+        if (bubble.requestReset() == true)
+        {
+            bubble.updateLocation(this.x,this.y);
+            clip.play();
+        }
     }
 
 }

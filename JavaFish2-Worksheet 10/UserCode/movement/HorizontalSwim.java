@@ -1,5 +1,5 @@
- package UserCode.movement;
- import UserCode.UserException.*;
+package UserCode.movement;
+import UserCode.UserException.*;
 
 /**
  * Abstract class HorizontalSwim - write a description of the class here
