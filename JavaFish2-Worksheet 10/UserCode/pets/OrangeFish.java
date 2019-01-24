@@ -45,13 +45,9 @@ public class OrangeFish extends Pet
             System.out.println(murle);
         }
     }
+
     
-    /**
-     * METHOD: Controls swim behaviour of children, moves the fish back and forth along the x axis, bouncing of walls and always
-     * facing the direction it is moving. Also oscilates the fish along the x axis creating a wave like motion.
-     * 
-     * @return      void 
-     */
+    @Override
     protected void movement()
     {
         wSwim.updateLocation(this.x, this.y);

@@ -32,13 +32,21 @@ public abstract class Pet extends DisplayObject implements IPet
         // Initialise _rndGen:
     }
     
+    /**
+     * METHOD: Controls swim behaviour of children, moves the fish back and forth along the x axis, bouncing of walls and always
+     * facing the direction it is moving. Also oscilates the fish along the x axis creating a wave like motion.
+     * 
+     * @return      void 
+     */
     protected abstract void movement();
     
     /**
-     * An example of a method - replace this comment with your own
+     * METHOD: Manipulates the x and y values of the caller, moving them across the aquarium. Core movement method.
      *
-     * @param  dx   a sample parameter for a method
-     * @return
+     * @param  dx   How far to move along the x axis
+     * @param  dy   How far to move along the y axis
+     * @param  dz   How far to move along the z axis
+     * @return  void
      */
     protected void translate(double dx, double dy, double dz)
     {
@@ -48,10 +56,11 @@ public abstract class Pet extends DisplayObject implements IPet
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * METHOD: Manipulates the x,y and z position values of the caller, moving them across the aquarium. Core movement method.
      *
-     * @param  dx   a sample parameter for a method
-     * @return
+     * @param  dx   How far to move along the x axis
+     * @param  dy   How far to move along the y axis
+     * @return  void
      */
     protected void translate(double dx, double dy)
     {
@@ -59,10 +68,12 @@ public abstract class Pet extends DisplayObject implements IPet
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * METHOD: Manipulates the x,y and z values of the caller, rotating them. Core rotation method.
      *
-     * @param  dx   a sample parameter for a method
-     * @return
+     * @param  dx   How far to rotate on the x axis
+     * @param  dy   How far to rotate on the y axis
+     * @param  dz   How far to rotate on the z axis
+     * @return  void
      */
     protected void rotate(double dx, double dy, double dz)
     {
@@ -72,10 +83,11 @@ public abstract class Pet extends DisplayObject implements IPet
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * METHOD: Manipulates the x,y and z values of the caller, rotating them. Core rotation method.
      *
-     * @param  dx   a sample parameter for a method
-     * @return
+     * @param  dx   How far to rotate on the x axis
+     * @param  dy   How far to rotate on the y axis
+     * @return  void
      */
     protected void rotate(double dx, double dy)
     {
