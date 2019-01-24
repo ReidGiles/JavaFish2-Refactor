@@ -1,10 +1,7 @@
 package UserCode.pets;
 
-import Framework.DisplayObject;
 import UserCode.movement.*;
-import Framework.Core;
-import Framework.ICore;
-import Framework.IDisplayObject;
+import UserCode.Managers.*;
 import java.applet.*;
 import java.net.*;
 
@@ -18,16 +15,27 @@ import java.net.*;
 public class OrangeFish extends Pet
 { 
     IMovement wSwim;
-    ICore _core;
-    IBubble bubble;
+    IBubbleManager _bubbleManager;
     AudioClip clip;
     /**
      * Constructor for objects of class OrangeFish
      */
-    public OrangeFish(double pSpeed, double[] pStartLocation, ICore pCore)
+    public OrangeFish(double pSpeed, double[] pStartLocation, IBubbleManager pBubbleManager)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Orange_Fish.png", 0.4);
+        _bubbleManager = pBubbleManager;
+        _speed = pSpeed;
+        // Initialise _facingDirectionX to -1:
+        _facingDirectionX = -1;
+        // Initialise _facingDirectionY to -1:
+        _facingDirectionY = -1;
+        wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
+        double[] _startLocation = pStartLocation;
+        // INITIALISE position
+        translate(_startLocation[0],_startLocation[1]);
+        rotate(0,90);
+        
         try
         {
             clip = Applet.newAudioClip(new URL("http://formenmedia.ign.com/media/news/image/gear/bubblegurggle.wav"));
@@ -36,19 +44,6 @@ public class OrangeFish extends Pet
         catch (MalformedURLException murle) {
             System.out.println(murle);
         }
-        _core = pCore;
-        _speed = pSpeed;
-        // Initialise _facingDirectionX to -1:
-        _facingDirectionX = -1;
-        // Initialise _facingDirectionY to -1:
-        _facingDirectionY = -1;
-        wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
-        double[] _startLocation = pStartLocation;
-        bubble = new Bubble(_startLocation[0],_startLocation[1]);
-        _core.addDisplayObject((IDisplayObject)bubble);
-        // INITIALISE position
-        translate(_startLocation[0],_startLocation[1]);
-        rotate(0,90);
     }
     
     /**
@@ -78,12 +73,7 @@ public class OrangeFish extends Pet
     public void update()
     {
         movement();
-        //_core.addDisplayObject((IDisplayObject)bubble);
-        if (bubble.requestReset() == true)
-        {
-            bubble.updateLocation(this.x,this.y);
-            clip.play();
-        }
+        //_bubbleManager.spawnBubble(this.x,this.y);
     }
 
 }

@@ -9,6 +9,7 @@ import UserCode.pets.*;
 import env3d.Env;
 import Framework.Core;
 import Framework.ICore;
+import UserCode.Managers.*;
 import Framework.IDisplayObject;
 import java.util.Random;
 import java.util.ArrayList;
@@ -56,6 +57,9 @@ public class Simulation
     
     private ArrayList<IDisplayObject> _displayObjects;
     
+    //DECLARE a referece to the instance of the BubbleManager class, call it '_bubbleManager':
+    private IBubbleManager _bubbleManager;
+    
     /**
      * Constructor for objects of class Simulation
      */
@@ -64,6 +68,8 @@ public class Simulation
         // INITIALISE instance variables:
         // _core:
         _core = new Core();
+        // _bubbleManager, pass it an reference to _core:
+        _bubbleManager = new BubbleManager(_core);
         // Initialise _rndGen:
         _rndGen = new Random();
         _displayObjects = new ArrayList<IDisplayObject>();
@@ -112,7 +118,7 @@ public class Simulation
         {
             double[] startLocation = randomLocation();
             // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new OrangeFish(random(), startLocation, _core));
+            _displayObjects.add(new OrangeFish(random(), startLocation, _bubbleManager));
         }
         for (int i=0; i<piranhaSpawn; i++)
         {
@@ -127,13 +133,6 @@ public class Simulation
         for (int i=0; i<_displayObjects.size(); i++)
         {
             _core.addDisplayObject(_displayObjects.get(i));
-        }
-        for (IDisplayObject displayObject : _displayObjects)
-        {
-            if (displayObject instanceof JavaFish)
-            {
-                //Create bubble for JavaFish                
-            }
         }
     }
     
@@ -183,6 +182,8 @@ public class Simulation
                         
             // UPDATE: the environment
             _core.updateWorld();
+            //UPDATE: BubbleManager, cleans up bubbles that leave the aquarium
+            _bubbleManager.update();
         }
         
         // EXIT: cleanly by closing-down the environment:
