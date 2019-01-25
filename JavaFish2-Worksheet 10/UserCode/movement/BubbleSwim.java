@@ -13,19 +13,36 @@ public class BubbleSwim implements IMovement
     private double _x;
     // DECLARE a double to store object y value, call it '_y':
     private double _y;
+    // DECLARE a double to store intitial speed, call it '_initialSpeed':
     private double _initialSpeed;
+    // DECLARE a double to store speedX, call it '_speedX':
     private double _speedX;
+    // DECLARE a double to store speedY, call it '_speedY':
     private double _speedY;
+    // DECLARE an int to store _facingDirectionX, call it '_facingDirectionX':
     private int _facingDirectionX;
+    // DECLARE an int to store _facingDirectionY, call it '_facingDirectionY':
     private int _facingDirectionY;
     private float _timeCounter;
     private double _rotationY;
+    /**
+     * BubbleSwim Constructor
+     *
+     * @param pSpeed Passed speed
+     * @param pFacingDirectionX Passed facingDirectionX
+     * @param pFacingDirectionY Passed facingDirectionY
+     */
     public BubbleSwim(double pSpeed, int pFacingDirectionX, int pFacingDirectionY)
     {
+        // INITIALISE _initialSpeed:
         _initialSpeed = pSpeed;
+        // INITIALISE _facingDirectionX:
         _facingDirectionX = pFacingDirectionX;
+        // INITIALISE _facingDirectionY:
         _facingDirectionY = pFacingDirectionY;
+        // INITIALISE _speedX;
         _speedX = _initialSpeed * _facingDirectionX;
+        // INITIALISE _speedY:
         _speedY = _initialSpeed * _facingDirectionY;
         _rotationY = Math.cos(_timeCounter);
     }
@@ -42,6 +59,11 @@ public class BubbleSwim implements IMovement
         _y = pY;
     }
     
+    /**
+     * METHOD: Notifies the caller when it leaves the aquarium boundries.
+     *
+     * @return An int that corrosponds with the boundry that was collided with
+     */
     public int bounce()
     {
         if (_x <= 1)
@@ -64,9 +86,9 @@ public class BubbleSwim implements IMovement
     }
     
     /**
-     * Generates speed for the method caller
+     * METHOD: Generates speed for the method caller
      *
-     * @return     ?
+     * @return  _speedX, 0 by default
      */
     public double updateX()
     {

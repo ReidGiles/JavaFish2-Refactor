@@ -16,7 +16,10 @@ public class Urchin extends Pet
     // DECLARE a reference to the instance of IMovement, call it '_hSwim':
     private IMovement _hSwim;
     /**
-     * Constructor for objects of class Urchin
+     * Urchin Constructor
+     *
+     * @param pSpeed Random start speed
+     * @param pStartLocation Random start location
      */
     public Urchin(double pSpeed, double[] pStartLocation)
     {

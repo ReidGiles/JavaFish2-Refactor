@@ -21,7 +21,11 @@ public class JavaFish extends Pet
     // DECLARE a double[], call it _startLocation:
     double[] _startLocation;
     /**
-     * Constructor for objects of class JavaFish
+     * JavaFish Constructor
+     *
+     * @param pSpeed Random start speed
+     * @param pStartLocation Random start location
+     * @param pBubbleManager Reference to bubble manager
      */
     public JavaFish(double pSpeed, double[] pStartLocation, IBubbleManager pBubbleManager)
     {

@@ -23,7 +23,11 @@ public abstract class Pet extends DisplayObject implements IPet
     // DECLARE a Random, call it '_rndGen':
     protected Random _rndGen;
     /**
-     * Constructor for objects of class Pet
+     * Pet Constructor
+     *
+     * @param model Display model
+     * @param tex Display texture
+     * @param scale Display scale
      */
     public Pet(String model, String tex, double scale)
     {

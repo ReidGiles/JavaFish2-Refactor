@@ -17,7 +17,10 @@ public class Bubble extends Pet implements IBubble
     // DECLARE a reference to the instance of AudioClip, call it '_clip':
     private AudioClip _clip;
     /**
-     * Constructor for objects of class JavaFish
+     * Bubble Constructor
+     *
+     * @param pX Bubble start x position
+     * @param pY Bubble start y position
      */
     public Bubble(double pX, double pY)
     {

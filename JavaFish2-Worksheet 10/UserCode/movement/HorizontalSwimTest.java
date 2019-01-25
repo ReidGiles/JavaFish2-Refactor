@@ -16,8 +16,6 @@ import UserCode.UserException.*;
  * 
  * Test Conditions:
  * HorizontalSwim(): throws ArgumentOutOfBoundsException if 0.005 < pSpeed < 0.05 is not true. Throws ArgumentOutOfBoundsException if pFacingDirectionX == (1 || -1) is not true.
- * updateLocation():
- * bounce():
  * 
  */
 public class HorizontalSwimTest

@@ -2,7 +2,7 @@ package UserCode.movement;
 import UserCode.UserException.*;
 
 /**
- * Abstract class HorizontalSwim - write a description of the class here
+ * HorizontalSwim is a movement behaviour that can be use
  *
  * @author Reid Giles
  * @version 25/01/2019
@@ -13,24 +13,36 @@ public class HorizontalSwim implements IMovement
     private double _x;
     // DECLARE a double to store object y value, call it '_y':
     private double _y;
-    // DECLARE a double to 
+    // DECLARE a double to store intitial speed, call it '_initialSpeed':
     private double _initialSpeed;
+    // DECLARE a double to store speed, call it '_speed':
     private double _speed;
+    // DECLARE an int to store _facingDirectionX, call it '_facingDirectionX':
     private int _facingDirectionX;
+    /**
+     * HorizontalSwim Constructor
+     *
+     * @param pSpeed Passed speed
+     * @param pFacingDirectionX Passed facingDirectionX
+     */
     public HorizontalSwim(double pSpeed, int pFacingDirectionX) throws ArgumentOutOfBoundsException
     {
+        // IF pSpeed is within legal range, initialise _initialSpeed to pSpeed:
         if (pSpeed > 0.005 && pSpeed < 0.05)
         {
             _initialSpeed = pSpeed;
         }
+        // ELSE throw an ArgumentOutOfBoundsException exception:
         else
         {
             throw new ArgumentOutOfBoundsException("speed parameter must be within range: 0.005 < pSpeed < 0.05");
         }
+        // IF pFacingDirectionX is within legal range, initialise _facingDirectionX to pFacingDirectionX:
         if (pFacingDirectionX == 1 || pFacingDirectionX == -1)
         {
             _facingDirectionX = pFacingDirectionX;
         }
+        // ELSE throw an ArgumentOutOfBoundsException exception:
         else
         {
             throw new ArgumentOutOfBoundsException("_facingDirectionX parameter must be within range: 1 || -1");
@@ -51,6 +63,11 @@ public class HorizontalSwim implements IMovement
         _y = pY;
     }
     
+    /**
+     * METHOD: Notifies the caller when it leaves the aquarium boundries.
+     *
+     * @return An int that corrosponds with the boundry that was collided with
+     */
     public int bounce()
     {
         if (_x <= 1)

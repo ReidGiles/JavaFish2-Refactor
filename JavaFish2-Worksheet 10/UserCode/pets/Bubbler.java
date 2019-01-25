@@ -14,7 +14,9 @@ public class Bubbler extends Pet
     //DECLARE a referece to the instance of the IBubbleManager class, call it '_bubbleManager':
     private IBubbleManager _bubbleManager;
     /**
-     * Constructor for objects of class Bubbler
+     * Bubbler Constructor
+     *
+     * @param pBubbleManager Reference to bubble manager
      */
     public Bubbler(IBubbleManager pBubbleManager)
     {

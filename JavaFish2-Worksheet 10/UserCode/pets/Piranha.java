@@ -18,7 +18,11 @@ public class Piranha extends Pet
     //DECLARE a referece to the instance of the IBubbleManager class, call it '_bubbleManager':
     private IBubbleManager _bubbleManager;
     /**
-     * Constructor for objects of class Piranha
+     * Piranha Constructor
+     *
+     * @param pSpeed Random start speed
+     * @param pStartLocation Random start location
+     * @param pBubbleManager Reference to bubble manager
      */
     public Piranha(double pSpeed, double[] pStartLocation, IBubbleManager pBubbleManager)
     {
