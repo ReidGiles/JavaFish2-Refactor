@@ -1,19 +1,21 @@
 package UserCode.pets;
 
-import Framework.DisplayObject;
 import UserCode.movement.*;
+import java.applet.*;
+import java.net.*;
 
 /**
  * Bubble contains all the behaviour and state to represent a Bubble.
  * 
  * @author Reid Giles
- * @version 16/11/2018
+ * @version 25/01/2019
  */
 public class Bubble extends Pet implements IBubble
 { 
-    IMovement bSwim;
-    double startX;
-    double startY;
+    // DECLARE a reference to the instance of IMovement, call it '_bSwim':
+    private IMovement _bSwim;
+    // DECLARE a reference to the instance of AudioClip, call it '_clip':
+    private AudioClip _clip;
     /**
      * Constructor for objects of class JavaFish
      */
@@ -21,13 +23,24 @@ public class Bubble extends Pet implements IBubble
     {
         // initialise instance variables
         super("sphere", "textures/javaFish/Bubble.png", 0.1);
+        // INITIALISE _speed:
         _speed = -0.020;
+        // Initialise _facingDirectionX to -1:
         _facingDirectionX = -1;
+        // Initialise _facingDirectionY to -1:
         _facingDirectionY = -1;
-        bSwim = new BubbleSwim(_speed, _facingDirectionX, _facingDirectionY);
+        _bSwim = new BubbleSwim(_speed, _facingDirectionX, _facingDirectionY);
         // INITIALISE position
         translate(pX,pY);
         rotate(0,90);
+        
+        try
+        {
+            _clip = Applet.newAudioClip(new URL("http://formenmedia.ign.com/media/news/image/gear/bubblegurggle.wav"));
+        }
+        catch (MalformedURLException murle) {
+            System.out.println(murle);
+        }
     }
     
     /**
@@ -37,25 +50,17 @@ public class Bubble extends Pet implements IBubble
      */
     protected void movement()
     {
-        bSwim.updateLocation(this.x, this.y);
-        translate(bSwim.updateY(),bSwim.updateX());        
+        // Pass x and y cord into movement class:
+        _bSwim.updateLocation(this.x, this.y);
+        // Move the fish based on return value of movement class:
+        translate(_bSwim.updateY(),_bSwim.updateX());        
     }
     
-    /**
-     * Updates '_x' and '_y' with the x and y position of method caller
-     * 
-     * @param  pX   x position of method caller
-     * @param  pY   y position of method caller
-     */
-    public void updateLocation(double pX, double pY)
-    {
-        this.x = pX;
-        this.y = pY;
-    }
+
     
     public boolean requestReset()
     {
-        if (bSwim.bounce() == 4)
+        if (_bSwim.bounce() == 4)
         {
             return true;
         }
@@ -68,7 +73,6 @@ public class Bubble extends Pet implements IBubble
      */
     public void update()
     {
-        // Call "movement()" method of parent class:
         movement();
     }
 

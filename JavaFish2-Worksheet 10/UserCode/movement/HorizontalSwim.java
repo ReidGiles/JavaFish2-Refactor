@@ -5,12 +5,15 @@ import UserCode.UserException.*;
  * Abstract class HorizontalSwim - write a description of the class here
  *
  * @author Reid Giles
- * @version 20/12/2018
+ * @version 25/01/2019
  */
 public class HorizontalSwim implements IMovement
 {
+    // DECLARE a double to store object x value, call it '_x':
     private double _x;
+    // DECLARE a double to store object y value, call it '_y':
     private double _y;
+    // DECLARE a double to 
     private double _initialSpeed;
     private double _speed;
     private int _facingDirectionX;

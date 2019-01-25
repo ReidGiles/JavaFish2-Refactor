@@ -10,13 +10,13 @@ import java.util.ArrayList;
 /**
  * Write a description of class BubbleManager here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Reid Giles
+ * @version 25/01/2019
  */
 public class BubbleManager implements IBubbleManager
 {
-    ICore _core;
-    IBubble bubble;
+    private ICore _core;
+    private IBubble bubble;
     private ArrayList<IBubble> _bubbles;
     public BubbleManager(ICore pCore)
     {

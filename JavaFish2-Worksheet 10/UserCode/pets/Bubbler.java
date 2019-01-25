@@ -1,22 +1,27 @@
 package UserCode.pets;
 
 import Framework.DisplayObject;
+import UserCode.Managers.*;
 
 /**
  * Bubble contains all the behaviour and state to represent a Bubble.
  * 
  * @author Reid Giles
- * @version 16/11/2018
+ * @version 25/01/2019
  */
 public class Bubbler extends Pet
 { 
+    //DECLARE a referece to the instance of the IBubbleManager class, call it '_bubbleManager':
+    private IBubbleManager _bubbleManager;
     /**
      * Constructor for objects of class Bubbler
      */
-    public Bubbler()
+    public Bubbler(IBubbleManager pBubbleManager)
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Bubbler.png", 0.4);
+        // INITIALISE _bubbleManager, set it to pBubbleManager:
+        _bubbleManager = pBubbleManager;
         // INITIALISE position
         translate(5,1);
         rotate(90,90);
@@ -42,8 +47,12 @@ public class Bubbler extends Pet
      */
     public void update()
     {
-        // Call "movement()" method of parent class:
         movement();
+        // Spawn new bubble at irregular intervals:
+        if (_rndGen.nextInt(150) == 1)
+        {
+            _bubbleManager.spawnBubble(this.x,this.y);
+        }
     }
 
 }

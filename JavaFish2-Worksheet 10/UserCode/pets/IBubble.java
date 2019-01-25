@@ -2,13 +2,12 @@ package UserCode.pets;
 
 
 /**
- * Write a description of interface IBubble here.
+ * The IBubble instance provides functionality for reading when bubbles leave the aquarium borders
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Reid Giles
+ * @version 25/01/2019
  */
 public interface IBubble
 {
-    public void updateLocation(double pX, double pY);
     public boolean requestReset();
 }

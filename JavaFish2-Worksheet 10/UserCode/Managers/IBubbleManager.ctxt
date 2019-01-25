@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=IBubbleManager
-comment0.text=\r\n\ Write\ a\ description\ of\ interface\ IBubbleManager\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ IBubbleManager\ instance\ provides\ functionality\ for\ spawning\ bubbles\ at\ set\ cords,\ and\ running\ the\ update\ function\ that\ removes\ any\ bubbles\ that\ have\ left\ the\ aquarium\ from\ the\ simulation\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
 comment1.params=pX\ pY
 comment1.target=void\ spawnBubble(double,\ double)
 comment2.params=

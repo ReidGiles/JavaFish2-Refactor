@@ -9,11 +9,12 @@ import UserCode.UserException.*;
  * the edge of the screen and alwaysface the direction it is traveling.
  * 
  * @author Reid Giles
- * @version 16/11/2018
+ * @version 25/01/2019
  */
 public class Urchin extends Pet
 {
-    IMovement hSwim;
+    // DECLARE a reference to the instance of IMovement, call it '_hSwim':
+    private IMovement _hSwim;
     /**
      * Constructor for objects of class Urchin
      */
@@ -21,11 +22,13 @@ public class Urchin extends Pet
     {
         // initialise instance variables
         super("models/billboard/billboard.obj", "textures/javaFish/Urchin.png", 0.4);
+        // INITIALISE _speed:
         _speed = pSpeed;
+        // Initialise _facingDirectionX to -1:
         _facingDirectionX = -1;
         try
         {
-            hSwim = new HorizontalSwim(_speed, _facingDirectionX);
+            _hSwim = new HorizontalSwim(_speed, _facingDirectionX);
         }
         catch (ArgumentOutOfBoundsException e)
         {
@@ -44,13 +47,16 @@ public class Urchin extends Pet
      */
     protected void movement()
     {
-        hSwim.updateLocation(this.x, this.y);
-        translate(hSwim.updateX(),hSwim.updateY());
-        if (hSwim.bounce() == 1)
+        // Pass x and y cord into movement class:
+        _hSwim.updateLocation(this.x, this.y);
+        // Move the fish based on return value of movement class:
+        translate(_hSwim.updateX(),_hSwim.updateY());
+        // If the fish hits a boundry, it turns around:
+        if (_hSwim.bounce() == 1)
         {
             rotate(0,270);
         }
-        else if (hSwim.bounce() == 2)
+        else if (_hSwim.bounce() == 2)
         {
             rotate(0,90);
         }
@@ -62,7 +68,6 @@ public class Urchin extends Pet
      */
     public void update()
     {
-        // Call "movement()" method of parent class:
         movement();
     }
 

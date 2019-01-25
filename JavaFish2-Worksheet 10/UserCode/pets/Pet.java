@@ -20,8 +20,8 @@ public abstract class Pet extends DisplayObject implements IPet
     protected int _facingDirectionY;
     // DECLARE a double to hold the swim speed, call it '_speed':
     protected double _speed;
-    // DECLARE a double array to hold the start location, call it '_startLocation':
-    private double[] _startLocation;
+    // DECLARE a Random, call it '_rndGen':
+    protected Random _rndGen;
     /**
      * Constructor for objects of class Pet
      */
@@ -30,6 +30,7 @@ public abstract class Pet extends DisplayObject implements IPet
         super(model, tex, scale);
         // Initialise instance variables
         // Initialise _rndGen:
+        _rndGen = new Random();
     }
     
     /**

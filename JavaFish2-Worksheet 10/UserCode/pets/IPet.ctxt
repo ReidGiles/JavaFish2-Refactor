@@ -1,4 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ update()
-numComments=1
+comment0.target=IPet
+comment0.text=\r\n\ The\ IPet\ instance\ provides\ functionality\ for\ updating\ pets\r\n\ \r\n\ @author\ Reid\ Giles\ \r\n\ @version\ 25/01/19\r\n
+comment1.params=
+comment1.target=void\ update()
+numComments=2

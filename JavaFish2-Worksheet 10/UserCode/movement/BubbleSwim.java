@@ -4,12 +4,14 @@ package UserCode.movement;
 /**
  * Write a description of class BubbleSwim here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Reid Giles
+ * @version 25/01/2019
  */
 public class BubbleSwim implements IMovement
 {
+    // DECLARE a double to store object x value, call it '_x':
     private double _x;
+    // DECLARE a double to store object y value, call it '_y':
     private double _y;
     private double _initialSpeed;
     private double _speedX;

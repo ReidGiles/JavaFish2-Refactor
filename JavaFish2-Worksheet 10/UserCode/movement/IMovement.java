@@ -2,10 +2,11 @@ package UserCode.movement;
 
 
 /**
- * Write a description of interface IMovement here.
+ * The IMovement instance provides functionality to allow objects to receive x and y cords for various movement patterns, receive notification if the fish hits a boundry and update the movement
+ * class with the x and y location of the method caller.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Reid Giles
+ * @version 25/01/2019
  */
 public interface IMovement
 {

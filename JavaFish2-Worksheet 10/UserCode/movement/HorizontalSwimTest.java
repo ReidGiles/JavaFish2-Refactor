@@ -200,13 +200,14 @@ public class HorizontalSwimTest
         boolean pass = false;       
         try
         {
+            // Create a new HorizontalSwim and store it as an IMovement
             IMovement testHswim = new HorizontalSwim(0.01,-10);
         }
         catch(ArgumentOutOfBoundsException e)
         {
             pass = true;
         }
-        
+        // If pass == false, display an error message
         assertTrue("ArgumentOutOfBoundsException was not thrown when HorizontalSwim(0.01,-10) was called", pass);
     }
     
@@ -261,10 +262,12 @@ public class HorizontalSwimTest
     {            
         try
         {
+            // Create a new HorizontalSwim and store it as an IMovement
             IMovement testHswim = new HorizontalSwim(0.01,1);
         }
         catch(ArgumentOutOfBoundsException e)
         {
+            // Test fails if an exception is caught
             fail("ArgumentOutOfBoundsException was thrown when HorizontalSwim(0.01,1) was called");
         }
     }

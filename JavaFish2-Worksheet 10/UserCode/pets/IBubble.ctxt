@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=IBubble
-comment0.text=\r\n\ Write\ a\ description\ of\ interface\ IBubble\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=pX\ pY
-comment1.target=void\ updateLocation(double,\ double)
-comment2.params=
-comment2.target=boolean\ requestReset()
-numComments=3
+comment0.text=\r\n\ The\ IBubble\ instance\ provides\ functionality\ for\ reading\ when\ bubbles\ leave\ the\ aquarium\ borders\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
+comment1.params=
+comment1.target=boolean\ requestReset()
+numComments=2

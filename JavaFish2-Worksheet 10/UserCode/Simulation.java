@@ -41,24 +41,31 @@ public class Simulation
     // DECLARE a double to store our random speed upper bounder, call it "_randomHigh":
     private double _randomHigh;
     
-    //DECLARE a double to store our randomised speed, call it "_speed":
+    // DECLARE a double to store our randomised speed, call it "_speed":
     private double _speed;
-    
-    private int[] randomLocation;
-    private int randomLocationX;
-    private int randomLocationY;
-    
-    private int javaFishSpawn;   
-    private int seahorseSpawn;    
-    private int urchinSpawn;    
-    private int orangeFishSpawn;    
-    private int piranhaSpawn;    
-    private int bubblerSpawn;
+    // DECLARE an int[] to store a randomised location, call it '_randomLocation':
+    private int[] _randomLocation;
+    // DECLARE an int to store an x value, call it '_randomLocationX':
+    private int _randomLocationX;
+    // DECLARE an int to store an y value, call it '_randomLocationY':
+    private int _randomLocationY;
+    // DECLARE an int, call it '_javaFishSpawn':
+    private int _javaFishSpawn; 
+    // DECLARE an int, call it '_seahorseSpawn':
+    private int _seahorseSpawn;  
+    // DECLARE an int, call it '_urchinSpawn':
+    private int _urchinSpawn;    
+    // DECLARE an int, call it '_orangeFishSpawn':
+    private int _orangeFishSpawn;    
+    // DECLARE an int, call it '_piranhaSpawn':
+    private int _piranhaSpawn;    
+    // DECLARE an int, call it '_bubblerSpawn':
+    private int _bubblerSpawn;
     
     //DECLARE an ArrayList of type IDisplayObject, call it '_displayObjects':
     private ArrayList<IDisplayObject> _displayObjects;
     
-    //DECLARE a referece to the instance of the BubbleManager class, call it '_bubbleManager':
+    //DECLARE a referece to the instance of the IBubbleManager class, call it '_bubbleManager':
     private IBubbleManager _bubbleManager;
     
     /**
@@ -71,18 +78,29 @@ public class Simulation
         _core = new Core();
         // _bubbleManager, pass it an reference to _core:
         _bubbleManager = new BubbleManager(_core);
-        // Initialise _rndGen:
+        // INITIALISE _rndGen:
         _rndGen = new Random();
-        // Initialise _displayObjects:
+        // INITIALISE _displayObjects:
         _displayObjects = new ArrayList<IDisplayObject>();
-        javaFishSpawn = 2;
-        seahorseSpawn = 2;
-        urchinSpawn = 2;
-        orangeFishSpawn = 2;
-        piranhaSpawn = 2;
-        bubblerSpawn = 1;
+        // INITIALISE _javaFishSpawn:
+        _javaFishSpawn = 2;
+        // INITIALISE _seahorseSpawn:
+        _seahorseSpawn = 2;
+        // INITIALISE _urchinSpawn:
+        _urchinSpawn = 2;
+        // INITIALISE _orangeFishSpawn:
+        _orangeFishSpawn = 2;
+        // INITIALISE _piranhaSpawn:
+        _piranhaSpawn = 2;
+        // INITIALISE _bubblerSpawn:
+        _bubblerSpawn = 1;
     }
     
+    
+    /**
+     * METHOD: Main
+     *
+     */
     public static void main()
     {
         Simulation sim = new Simulation();
@@ -98,34 +116,34 @@ public class Simulation
      */
     public void populate()
     {
-        for (int i=0; i<javaFishSpawn; i++)
+        for (int i=0; i<_javaFishSpawn; i++)
         {
             // Creates a JavaFish object namesd javaFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new JavaFish(random(), randomLocation()));
+            _displayObjects.add(new JavaFish(random(), _randomLocation(), _bubbleManager));
         }
-        for (int i=0; i<seahorseSpawn; i++)
+        for (int i=0; i<_seahorseSpawn; i++)
         {
             // Creates a Seahorse object namesd seahorse1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Seahorse(random(), randomLocation()));
+            _displayObjects.add(new Seahorse(random(), _randomLocation(), _bubbleManager));
         }
-        for (int i=0; i<urchinSpawn; i++)
+        for (int i=0; i<_urchinSpawn; i++)
         {
             // Creates a Urchin object namesd urchin1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Urchin(random(), randomLocation()));
+            _displayObjects.add(new Urchin(random(), _randomLocation()));
         }
-        for (int i=0; i<orangeFishSpawn; i++)
+        for (int i=0; i<_orangeFishSpawn; i++)
         {
             // Creates a OrangeFish object namesd orangeFish1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new OrangeFish(random(), randomLocation(), _bubbleManager));
+            _displayObjects.add(new OrangeFish(random(), _randomLocation(), _bubbleManager));
         }
-        for (int i=0; i<piranhaSpawn; i++)
+        for (int i=0; i<_piranhaSpawn; i++)
         {
             // Creates a Piranha object namesd piranha1, passes x-position, y-position and speed (provided via the return value of random():
-            _displayObjects.add(new Piranha(random(), randomLocation()));
+            _displayObjects.add(new Piranha(random(), _randomLocation(), _bubbleManager));
         }
-        for (int i=0; i<bubblerSpawn; i++)
+        for (int i=0; i<_bubblerSpawn; i++)
         {
-            _displayObjects.add(new Bubbler());
+            _displayObjects.add(new Bubbler(_bubbleManager));
         }
         // Add each display object in _displayObjects to the aquarium:
         for (int i=0; i<_displayObjects.size(); i++)
@@ -151,12 +169,19 @@ public class Simulation
         return _speed;
     }
     
-    private double[] randomLocation()
+    /**
+     * METHOD: Return a double[] containing two random x and y cords that will place an object at a random position within the aquariums boundaries:
+     *
+     * @return _randomLocation
+     */
+    private double[] _randomLocation()
     {
-        randomLocationX = (_rndGen.nextInt(9) + 1);
-        randomLocationY = (_rndGen.nextInt(7) + 1);
-        double[] randomLocation = {randomLocationX, randomLocationY};
-        return randomLocation;
+        // SET _randomLocationX to a number between 1 and 10:
+        _randomLocationX = (_rndGen.nextInt(9) + 1);
+        // SET _randomLocationY to number between 1 and 8:
+        _randomLocationY = (_rndGen.nextInt(7) + 1);
+        double[] _randomLocation = {_randomLocationX, _randomLocationY};
+        return _randomLocation;
     }
 
     /**

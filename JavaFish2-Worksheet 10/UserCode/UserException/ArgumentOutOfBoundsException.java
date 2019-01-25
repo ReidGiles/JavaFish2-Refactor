@@ -5,8 +5,8 @@ package UserCode.UserException;
  * The ArgumentOutOfBoundsException class:
  * used to flag when a parameter is outside the defined range of values.
  * 
- * @author Marc Price 
- * @version 0.3
+ * @author Marc Price & Reid Giles
+ * @version 25/01/2019
  */
 public class ArgumentOutOfBoundsException extends Exception
 {

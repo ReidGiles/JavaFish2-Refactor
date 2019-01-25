@@ -2,10 +2,10 @@ package UserCode.Managers;
 
 
 /**
- * Write a description of interface IBubbleManager here.
+ * The IBubbleManager instance provides functionality for spawning bubbles at set cords, and running the update function that removes any bubbles that have left the aquarium from the simulation
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Reid Giles
+ * @version 25/01/2019
  */
 public interface IBubbleManager
 {
