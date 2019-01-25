@@ -9,6 +9,7 @@ comment2.target=void\ movement()
 comment2.text=\r\n\ METHOD\:\ Controls\ move\ behaviour.\r\n\ \r\n\ @return\ \ \ \ \ \ void\ \r\n
 comment3.params=
 comment3.target=boolean\ requestReset()
+comment3.text=\r\n\ METHOD\:\ Informs\ caller\ if\ bubble\ has\ left\ the\ aquarium\r\n\r\n\ @return\ An\ integer\ corresponding\ to\ one\ of\ the\ four\ aquarium\ borders\r\n
 comment4.params=
 comment4.target=void\ update()
 comment4.text=\r\n\ METHOD\:\ to\ set\ the\ next\ frame\ of\ the\ simulation,\ called\ on\ each\ pass\ of\ the\ simulation\r\n\r\n

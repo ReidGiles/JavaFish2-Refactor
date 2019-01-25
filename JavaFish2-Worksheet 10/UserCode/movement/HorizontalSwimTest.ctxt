@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HorizontalSwimTest
-comment0.text=\r\n\ The\ test\ class\ HorizontalSwimTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Test\ Conditions\:\r\n\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ 0.005\ <\ pSpeed\ <\ 0.05\ is\ not\ true.\ Throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\ \=\=\ (1\ ||\ -1)\ is\ not\ true.\r\n\ \r\n
+comment0.text=\r\n\ The\ test\ class\ HorizontalSwimTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Test\ Conditions\:\r\n\ HorizontalSwim()\:\ throws\ ArgumentOutOfBoundsException\ if\ 0.005\ <\ pSpeed\ <\ 0.05\ is\ not\ true.\ Throws\ ArgumentOutOfBoundsException\ if\ pFacingDirectionX\ \=\=\ (1\ ||\ -1)\ is\ not\ true.\r\n\ UpdateLocation()\:\ \r\n\ \r\n
 comment1.params=
 comment1.target=HorizontalSwimTest()
 comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ HorizontalSwimTest\r\n

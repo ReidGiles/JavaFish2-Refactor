@@ -40,10 +40,13 @@ public class Bubble extends Pet implements IBubble
         try
         {
             _clip = Applet.newAudioClip(new URL("http://formenmedia.ign.com/media/news/image/gear/bubblegurggle.wav"));
+            // Works, but causes freezes. Need to solve.
+            //_clip.play();
         }
         catch (MalformedURLException murle) {
             System.out.println(murle);
         }
+        // Cs.cmu.edu. (n.d.). Playing Sounds in Java. [online] Available at: https://www.cs.cmu.edu/~illah/CLASSDOCS/javasound.pdf [Accessed 25 Jan. 2019].
     }
     
     /**
@@ -56,11 +59,15 @@ public class Bubble extends Pet implements IBubble
         // Pass x and y cord into movement class:
         _bSwim.updateLocation(this.x, this.y);
         // Move the fish based on return value of movement class:
-        translate(_bSwim.updateY(),_bSwim.updateX());        
+        translate(_bSwim.updateY(),_bSwim.updateX());
     }
     
-
     
+    /**
+     * METHOD: Informs caller if bubble has left the aquarium
+     *
+     * @return An integer corresponding to one of the four aquarium borders
+     */
     public boolean requestReset()
     {
         if (_bSwim.bounce() == 4)

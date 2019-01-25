@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BubbleManager
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BubbleManager\ here.\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
+comment0.text=\r\n\ Bubble\ manager\ is\ responsible\ for\ creating\ and\ deleting\ bubbles.\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
 comment1.params=pCore
 comment1.target=BubbleManager(Framework.ICore)
 comment2.params=pX\ pY

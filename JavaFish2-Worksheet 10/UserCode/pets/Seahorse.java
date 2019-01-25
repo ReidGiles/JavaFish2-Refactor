@@ -27,7 +27,7 @@ public class Seahorse extends Pet
     public Seahorse(double pSpeed, double[] pStartLocation, IBubbleManager pBubbleManager)
     {
         // initialise instance variables
-        super("models/billboard/billboard.obj", "textures/javaFish/Seahorse.png", 0.4);
+        super("models/billboard/billboard.obj", "textures/javaFish/Seahorse.png", 0.3);
         // INITIALISE _bubbleManager, set it to pBubbleManager:
         _bubbleManager = pBubbleManager;
         // INITIALISE _speed:

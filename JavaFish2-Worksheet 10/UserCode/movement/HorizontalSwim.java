@@ -2,7 +2,7 @@ package UserCode.movement;
 import UserCode.UserException.*;
 
 /**
- * HorizontalSwim is a movement behaviour that can be use
+ * HorizontalSwim is a movement behaviour returns movements values
  *
  * @author Reid Giles
  * @version 25/01/2019

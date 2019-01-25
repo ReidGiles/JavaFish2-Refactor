@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HorizontalSwim
-comment0.text=\r\n\ HorizontalSwim\ is\ a\ movement\ behaviour\ that\ can\ be\ use\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
+comment0.text=\r\n\ HorizontalSwim\ is\ a\ movement\ behaviour\ returns\ movements\ values\r\n\r\n\ @author\ Reid\ Giles\r\n\ @version\ 25/01/2019\r\n
 comment1.params=pSpeed\ pFacingDirectionX
 comment1.target=HorizontalSwim(double,\ int)
 comment1.text=\r\n\ HorizontalSwim\ Constructor\r\n\r\n\ @param\ pSpeed\ Passed\ speed\r\n\ @param\ pFacingDirectionX\ Passed\ facingDirectionX\r\n

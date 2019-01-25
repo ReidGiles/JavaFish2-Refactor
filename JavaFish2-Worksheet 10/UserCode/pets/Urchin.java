@@ -24,7 +24,7 @@ public class Urchin extends Pet
     public Urchin(double pSpeed, double[] pStartLocation)
     {
         // initialise instance variables
-        super("models/billboard/billboard.obj", "textures/javaFish/Urchin.png", 0.4);
+        super("models/billboard/billboard.obj", "textures/javaFish/Urchin.png", 0.3);
         // INITIALISE _speed:
         _speed = pSpeed;
         // Initialise _facingDirectionX to -1:

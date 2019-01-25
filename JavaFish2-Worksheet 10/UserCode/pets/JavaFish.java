@@ -42,13 +42,16 @@ public class JavaFish extends Pet
         // Be prepared to catch an ArgumentOutOfBoundsException from _hSwim:
         try
         {
+            // INITIALISE _hSwim:
             _hSwim = new HorizontalSwim(_speed, _facingDirectionX);
         }
         catch (ArgumentOutOfBoundsException e)
         {
         }
         // INITIALISE position
+        // INITIALISE fish x y position:
         translate(_startLocation[0],_startLocation[1]);
+        // INITIALISE fish rotation:
         rotate(0,90);       
     }
     

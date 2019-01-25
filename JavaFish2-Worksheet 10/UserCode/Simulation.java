@@ -1,4 +1,5 @@
 package UserCode;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Notes:
 // * Add code to this as necessary to produce your simulation.
@@ -13,6 +14,9 @@ import UserCode.Managers.*;
 import Framework.IDisplayObject;
 import java.util.Random;
 import java.util.ArrayList;
+import java.applet.*;
+import java.net.*;
+
 
 /**
  * Simulation is the top-level class for the Aquarium simulation.
@@ -23,7 +27,7 @@ import java.util.ArrayList;
 public class Simulation
 {
     // instance variables:
-    // DECLARE a reference to the instance of the Core class, call it '_core':
+    // DECLARE a reference to the instance of the ICore interface, call it '_core':
     private ICore _core;
     
     // DECLARE a reference to the instance of the 'Env' (environment) class, call it '_world':
@@ -68,6 +72,9 @@ public class Simulation
     //DECLARE a referece to the instance of the IBubbleManager class, call it '_bubbleManager':
     private IBubbleManager _bubbleManager;
     
+    // DECLARE a reference to the instance of AudioClip, call it '_clip':
+    private AudioClip _clip;
+    
     /**
      * Constructor for objects of class Simulation
      */
@@ -94,6 +101,16 @@ public class Simulation
         _piranhaSpawn = 2;
         // INITIALISE _bubblerSpawn:
         _bubblerSpawn = 1;
+        
+        try
+        {
+            _clip = Applet.newAudioClip(new URL("http://formenmedia.ign.com/media/news/image/gear/bubblegurggle.wav"));
+            _clip.play();
+        }
+        catch (MalformedURLException murle) {
+            System.out.println(murle);
+        }
+        // Cs.cmu.edu. (n.d.). Playing Sounds in Java. [online] Available at: https://www.cs.cmu.edu/~illah/CLASSDOCS/javasound.pdf [Accessed 25 Jan. 2019].
     }
     
     
