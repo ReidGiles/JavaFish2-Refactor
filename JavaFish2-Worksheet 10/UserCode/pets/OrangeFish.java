@@ -35,6 +35,7 @@ public class OrangeFish extends Pet
         _facingDirectionX = -1;
         // Initialise _facingDirectionY to -1:
         _facingDirectionY = -1;
+        // INITIALISE _wSwim:
         _wSwim = new WaveSwim(_speed, _facingDirectionX, _facingDirectionY);
         double[] _startLocation = pStartLocation;
         // INITIALISE position
